@@ -10,8 +10,8 @@ $plaster: #CDCDCD;
 // Cloudy
 
 
-
 // Heavy Rain
+
 
 body {
   margin: 0px;
@@ -19,15 +19,8 @@ body {
   background-color: $ice;
 }
 
-.top-half {
-  height: 50vh;
-  background-color: $plaster;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  width: 100vw;
-  h1 {
-    display: inline-block;
+h1 {
+    text-align: center;
     margin-top: 0px;
     color: $fresh-water;
     font-weight: bold;
@@ -40,7 +33,6 @@ body {
     font-size: 3em;
     font-family: "Rockwell";
   }
-}
 
 #cloud {
 	width: 350px; height: 120px;

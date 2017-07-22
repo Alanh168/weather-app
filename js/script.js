@@ -64,13 +64,15 @@ $(document).ready(function() {
     });
   }
 
-  function changeDegreeUnits () {
+  function changeDegreeUnits() {
     var fahrenheit = '\xB0F';
     var celsius = '\xB0C';
 
   }
 
+  function changeCloudColor() {
 
+  }
 
 
 
