@@ -9,7 +9,7 @@ $(document).ready(function() {
     // Get Weather, Temperature, and wind using OpenWeatherMap API, zip code, and country code
 
     getWeather(zip, countryCode);
-    changeDegreeUnits();
+
   });
 
   function getWeather(zip, countryCode) {
@@ -24,9 +24,8 @@ $(document).ready(function() {
         $("#temperature").html(temperature + '\xB0F');
 
         // Weather
-        var forecast = weatherData.weather.main;
-        $("#weather").html(forecast);
-        console.log(forecast);
+        // var forecast = weatherData.weather.main;
+        // $("#weather").html(forecast);
 
         // Winds
         var windSpeed = weatherData.wind.speed;
@@ -64,16 +63,26 @@ $(document).ready(function() {
     });
   }
 
-  function changeDegreeUnits() {
-    var fahrenheit = '\xB0F';
-    var celsius = '\xB0C';
+  // function changeCloudColor() {
+  // }
+  //
+  // function changePageColor() {
+  // }
 
+
+
+});
+
+$('#changeDegreeUnits').click(function() {
+  var fullText = $('#temperature').text();
+  var temp = fullText.substring(0, fullText.length-2);
+  var currentUnit = fullText.substring((fullText.length-1), fullText.length);
+  if(currentUnit == 'F') {
+    temp = ((temp - 32) * 5)/9;
+    $('#temperature').text(temp + '\xB0C');
   }
-
-  function changeCloudColor() {
-
+  else {
+    temp = (temp * 9)/5 + 32;
+    $('#temperature').text(temp + '\xB0F');
   }
-
-
-
 });
