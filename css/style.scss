@@ -1,8 +1,10 @@
 @font-face {
-
+  font-family: 'Anson';
+  src: local('../fonts/Anson-Regular.otf');
 }
 
-// For Sunshine
+// For Sunshine/Default
+$dark-blue: #0064b7;
 $ice: #99D3DF;
 $fresh-water: #88BBD6;
 $plaster: #CDCDCD;
@@ -16,23 +18,61 @@ $plaster: #CDCDCD;
 body {
   margin: 0px;
   padding: 0px;
-  background-color: $plaster;
+  background-color: $dark-blue;
 }
 
 h1 {
     text-align: center;
     margin-top: 0px;
     color: $fresh-water;
-    font-weight: bold;
     font-size: 4em;
-    font-family: "Impact";
-  }
-  #location {
-    color: $fresh-water;
+    font-family: 'Anson';
+}
+
+#container-box {
+  background-color: $fresh-water;
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
+
+#location {
+    color: black;
     font-weight: bold;
     font-size: 3em;
     font-family: "Rockwell";
-  }
+}
+
+.weatherData {
+  padding: 5px;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+#temperature {
+
+}
+
+#weather {
+
+}
+
+#wind {
+
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+
+}
 
 #cloud {
 	width: 350px; height: 120px;
@@ -56,7 +96,7 @@ h1 {
 	content: '';
 	position: absolute;
 	background: #f2f9fe;
-	z-index: -1
+	z-index: -1;
 }
 
 #cloud:after {
