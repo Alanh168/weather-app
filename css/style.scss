@@ -1,10 +1,11 @@
 @font-face {
   font-family: 'Anson';
-  src: local('../fonts/Anson-Regular.otf');
+  src: url('../fonts/Anson-Regular.otf');
 }
 
 // For Sunshine/Default
 $dark-blue: #0064b7;
+$page-background: #213A40;
 $ice: #99D3DF;
 $fresh-water: #88BBD6;
 $plaster: #CDCDCD;
@@ -18,40 +19,37 @@ $plaster: #CDCDCD;
 body {
   margin: 0px;
   padding: 0px;
-  background-color: $dark-blue;
-}
-
-h1 {
-    text-align: center;
-    margin-top: 0px;
-    color: $fresh-water;
-    font-size: 4em;
-    font-family: 'Anson';
+  background-color: $page-background;
 }
 
 #container-box {
   background-color: $fresh-water;
-  width: 80%;
-  height: 100vh;
+  text-align: center;
+  width: 70%;
+  height: 70vh;
   margin: 0 auto;
   border-radius: 0.5rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+h2 {
+  font-family: "Anson";
+  font-size: 3em;
 }
 
 #location {
-    color: black;
+    color: white;
     font-weight: bold;
-    font-size: 3em;
-    font-family: "Rockwell";
+    font-size: 4em;
+
 }
 
 .weatherData {
-  padding: 5px;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  background-color: white;
   text-align: center;
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 700;
+  margin: 0 2em auto;
+  font-family: 'Anson';
 }
 
 #temperature {
@@ -63,14 +61,6 @@ h1 {
 }
 
 #wind {
-
-}
-
-h2 {
-  text-align: center;
-}
-
-p {
 
 }
 
@@ -90,6 +80,8 @@ p {
 
 	position: relative;
 	margin: 120px auto 20px;
+
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #cloud:after, #cloud:before {

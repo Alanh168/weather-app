@@ -20,14 +20,21 @@ $(document).ready(function() {
       dataType: 'jsonp',
       success : function(weatherData) {
         // Temperature
-        var temperature = Math.trunc((weatherData.main.temp * 9)/5 + 32);
+        var temperature = Math.round((weatherData.main.temp * 9)/5 + 32);
         $("#temperature").html(temperature + '\xB0F');
 
         // Weather
-        // var forecast = weatherData.weather.main;
-        // $("#weather").html(forecast);
+        var forecast = weatherData.weather[0].main;
+        if(forecast == null) {
+          $("#weather").html("N/A");
+          console.log("Failed to get weather information");
+        }
+        else {
+          $("#weather").html(forecast);
+        }
 
         // Winds
+
         var windSpeed = weatherData.wind.speed;
         var windDirection = weatherData.wind.deg;
         // Changing the value of windDirection to an actual direction
@@ -55,6 +62,14 @@ $(document).ready(function() {
         else if (windDirection > 285 && windDirection <= 345) {
           windDirection = "SE";
         }
+        if(windSpeed == null) {
+          windSpeed = 'N/A Wind Speed';
+          console.log("Failed to get wind speed");
+        }
+        if(windDirection == null) {
+          windDirection = '';
+          console.log("Failed to get wind direction");
+        }
         $("#wind").html(windDirection + " " + windSpeed + " knots");
       },
       error: function () {
@@ -78,11 +93,11 @@ $('#changeDegreeUnits').click(function() {
   var temp = fullText.substring(0, fullText.length-2);
   var currentUnit = fullText.substring((fullText.length-1), fullText.length);
   if(currentUnit == 'F') {
-    temp = ((temp - 32) * 5)/9;
+    temp = Math.round(((temp - 32) * 5)/9);
     $('#temperature').text(temp + '\xB0C');
   }
   else {
-    temp = (temp * 9)/5 + 32;
+    temp = Math.round((temp * 9)/5 + 32);
     $('#temperature').text(temp + '\xB0F');
   }
 });
