@@ -5,7 +5,7 @@
 
 // For Sunshine/Default
 $dark-blue: #0064b7;
-$page-background: #213A40;
+$darker-text: #213A40;
 $ice: #99D3DF;
 $fresh-water: #88BBD6;
 $plaster: #CDCDCD;
@@ -19,7 +19,7 @@ $plaster: #CDCDCD;
 body {
   margin: 0px;
   padding: 0px;
-  background-color: $page-background;
+  background-color: $darker-text;
 }
 
 #container-box {
@@ -30,38 +30,6 @@ body {
   margin: 0 auto;
   border-radius: 0.5rem;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-h2 {
-  font-family: "Anson";
-  font-size: 3em;
-}
-
-#location {
-    color: white;
-    font-weight: bold;
-    font-size: 4em;
-
-}
-
-.weatherData {
-  text-align: center;
-  font-size: 3em;
-  font-weight: 700;
-  margin: 0 2em auto;
-  font-family: 'Anson';
-}
-
-#temperature {
-
-}
-
-#weather {
-
-}
-
-#wind {
-
 }
 
 #cloud {
@@ -122,4 +90,43 @@ h2 {
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
+}
+
+h2 {
+  font-family: "Anson";
+  font-size: 3em;
+}
+
+#location {
+	color: white;
+    font-weight: 700;
+    font-size: 1em;
+    margin-bottom: 2em;
+	#latitude {
+		margin-right: 1em;
+		display: inline-block;
+	}
+	#longitude {
+		margin-left: 1em; 
+		display: inline-block;
+	}
+	.location-text {
+		display: inline-block;
+	}
+	.coordinates {
+		color: $darker-text;
+		display: inline-block;
+	}
+}
+
+.weatherData {
+  text-align: center;
+  font-size: 3em;
+  font-weight: 700;
+  margin: 0 2em auto;
+  font-family: 'Anson';
+  a {
+  	cursor: pointer;
+  	color: $darker-text;
+  }
 }
